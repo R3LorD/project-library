@@ -1,0 +1,59 @@
+.content{
+    width: 1200px;
+    height: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.book{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+}
+
+.cover{
+    margin: 5px;
+    grid-column: 1;
+}
+
+.cover-b{
+    margin: 5px;
+    width: 200px;
+}
+
+.des{
+    margin: 5px;
+    grid-column: 2;
+    position: relative;
+}
+
+.read{
+    margin-right: 5px;
+}
+
+.btn-b{
+    margin-top:10%;
+}
+
+.description{
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+.btn-primary{
+    background: #e4524f;
+    border-color: #e4524f;
+}
+
+.btns{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

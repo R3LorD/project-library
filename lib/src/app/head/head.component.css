@@ -1,0 +1,95 @@
+#top-menu{
+    height: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 16pt;
+}
+
+#Main{
+    grid-column: 1;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+}
+
+#Favourite{
+    grid-column: 2;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+}
+
+#genre{
+    grid-column: 3;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+}
+
+.top-menu-text:hover{
+    background: #232553;
+    color: white;
+}
+
+
+#Main:hover{
+    color: white;
+    
+}
+/*/Верхнее меню*/
+
+/*Нижнее меню*/
+
+#low-menu{
+    height: 100px;
+    width: 100%;
+    background: #26295a;
+}
+
+#low-inner-menu{
+    height: 100%;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+#logo{
+    grid-column: 1;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    cursor: pointer;
+}
+
+#search{
+    grid-column: 2;
+    margin: auto;
+    height: 20px;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.enter-btn{
+    grid-column: 3;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+.btn-primary{
+    background: #e4524f;
+    border-color: #e4524f;
+}
