@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { book } from '../../models/book.model';
+import { book, favBtns } from '../../models/book.model';
+import { FavService } from '../fav.service';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +9,11 @@ import { book } from '../../models/book.model';
 })
 export class MainComponent implements OnInit {
 
-  constructor() {
+  constructor(private favService: FavService) {
 
   }
   books = new Array<book>();
-  favBooks = new Array<book>();
+  favBtns = new Array<favBtns>();
 
   ngOnInit() {
     this.books = [
@@ -25,7 +26,9 @@ export class MainComponent implements OnInit {
         genre: "Фэнтези", 
         description: `Ведьмак» Анджея Сапковского является 
         одним из самых популярных циклов книг. 
-        Это история о приключениях ведьмака Геральта, охотника на чудовищ.`},
+        Это история о приключениях ведьмака Геральта, охотника на чудовищ.`,
+        favBtn: true
+      },
       {
         id: 1,
         imgSrc: "./assets/autostop.jpg",
@@ -37,7 +40,8 @@ export class MainComponent implements OnInit {
         в результате которой Земля будет снесена, чтобы освободить место для 
         межгалактического шоссе Артур Дент, вместе со своим другом-инопланетянином 
         Фордом Префектом, покидает планету и начинает свою умопомрачительную одиссею, 
-        покорившую миллионы читателей по всему миру.`
+        покорившую миллионы читателей по всему миру.`,
+        favBtn: true
       },
       {
         id: 2,
@@ -49,7 +53,8 @@ export class MainComponent implements OnInit {
         description: `Вечный роман о несбывшейся любви великого 
         классика мировой литературы А.С Пушкина,
          как и почти двести лет назад, так и сегодня не теряет 
-         своей своей актуальности и любим читателями по всему миру.`
+         своей своей актуальности и любим читателями по всему миру.`,
+         favBtn: true
       },
       {
         id: 3,
@@ -60,18 +65,20 @@ export class MainComponent implements OnInit {
         genre: "Драма", 
         description: `Мастер и Маргарита» – блистательный шедевр, 
         созданный Михаилом Булгаковым, завораживающая мистическая 
-        дьяволиада, обнажающая вечные темы любви, борьбы добра со злом, смерти и бессмертия.`
+        дьяволиада, обнажающая вечные темы любви, борьбы добра со злом, смерти и бессмертия.`,
+        favBtn: true
       }  
     ];
   }
   fav(id: number) {
     console.log(id);
 
-    if(this.favBooks.find(el=>el.id == id) == null){
-      this.favBooks.push(this.books.find(el=>el.id == id));
+    if(this.favService.favBooks.find(el=>el.id == id) == null){
+      this.favService.favBooks.push(this.books.find(el=>el.id == id));
     }
-    console.log(this.favBooks);
-    
+    console.log(this.favService.favBooks);
+
+
   }
 
   read(bookSrc: string){

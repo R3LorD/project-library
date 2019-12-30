@@ -8,6 +8,7 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { HeadComponent } from './head/head.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
+import { FavService } from './fav.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [FavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

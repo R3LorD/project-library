@@ -1,9 +1,46 @@
 .footer{
     height: 100px;
     width: 100%;
-    background: #26295a;
+    background: #34393e;
     color: white;
     position: absolute;
-    bottom: 0;
+    margin-top: 100%;
+}
 
+.in-footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 1200px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    text-align: center;
+    
+}
+
+.logo{
+    grid-column: 1;
+    cursor: pointer;
+}
+
+.support{
+    grid-column: 2;
+}
+
+.text-support{
+    font-size: large;
+}
+
+.num-support{
+    font-size: x-large;
+}
+
+.social{
+    grid-column: 3;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
 }

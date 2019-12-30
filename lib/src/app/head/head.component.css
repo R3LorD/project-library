@@ -33,7 +33,7 @@
 }
 
 .top-menu-text:hover{
-    background: #232553;
+    background: #34393e;
     color: white;
 }
 
@@ -49,7 +49,7 @@
 #low-menu{
     height: 100px;
     width: 100%;
-    background: #26295a;
+    background: #34393e;
 }
 
 #low-inner-menu{

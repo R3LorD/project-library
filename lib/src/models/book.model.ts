@@ -6,4 +6,10 @@ export class book {
     author: string;
     genre: string;
     description: string;
+    favBtn: boolean;
+}
+
+export class favBtns{
+    id: number;
+    favBtn: boolean;
 }

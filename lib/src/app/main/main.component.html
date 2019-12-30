@@ -12,7 +12,7 @@
                 <div class="description">{{book.description}}</div>
                 <div class="btns">
                     <button (click)='read(book.bookSrc)' class='btn btn-primary btn-b read'>Читать</button>
-                    <button (click)='fav(book.id)' class="btn btn-primary btn-b in-f">В Избранное</button>
+                    <button (click)='fav(book.id, book.favBtn)' class="btn btn-primary btn-b in-f">В Избранное</button>
                 </div>
             </div>
         </div>
