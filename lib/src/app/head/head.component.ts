@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { FavService } from '../fav.service';
 
 @Component({
   selector: 'app-head',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadComponent implements OnInit {
 
-  constructor() { }
+  constructor(private favService: FavService) { }
 
   ngOnInit() {
   }
+
+  bookInput = new FormControl();
+  options = this.favService.searchList;
 
 }
