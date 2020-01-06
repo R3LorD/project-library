@@ -81,6 +81,9 @@ export class MainComponent implements OnInit {
       console.log(this.favService.favBooks);
     }
     else{
+      if(this.favService.favBooks.find(el=>el.id == id) != null){
+        this.favService.favBooks.splice(id, 1);
+      }
       this.favService.favBtns[id] = true;
     }
 

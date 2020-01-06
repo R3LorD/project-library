@@ -4,6 +4,4 @@ export class FavService{
     favBooks = new Array<book>();
 
     favBtns: boolean[] = [true, true, true, true];
-
-    
 }
