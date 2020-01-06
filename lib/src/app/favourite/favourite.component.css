@@ -52,6 +52,11 @@
     border-color: #87adb6;
 }
 
+.btn-secondary{
+    background: #47646a;
+    border-color: #47646a;
+}
+
 .btns{
     position: absolute;
     bottom: 0;

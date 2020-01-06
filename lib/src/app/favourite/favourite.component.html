@@ -12,7 +12,8 @@
                 <div class="description">{{book.description}}</div>
                 <div class="btns">
                     <button (click)='read(book.bookSrc)' class='btn btn-primary btn-b read'>Читать</button>
-                    <button (click)='fav(book.id)' class="btn btn-primary btn-b in-f">В Избранное</button>
+                    <button *ngIf='book.favBtn' (click)='fav(book.id)' class="btn btn-primary btn-b in-f">В Избранное</button>
+                    <button *ngIf='!book.favBtn' (click)='fav(book.id)' class="btn btn-secondary btn-b in-f">В Избранном</button>
                 </div>
             </div>
         </div>
