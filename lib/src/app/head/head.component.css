@@ -37,8 +37,6 @@
     color: white;
 }
 
-
-
 .main:hover{
     color: white;
     
@@ -59,7 +57,7 @@
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
 }
 
 .logo{
@@ -78,19 +76,4 @@
     width: 100%;
     border-radius: 10px;
     padding-left: 10px;
-}
-
-.enter-btn{
-    grid-column: 3;
-    color: white;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    text-decoration: none;
-}
-
-.btn-primary{
-    background: #e4524f;
-    border-color: #e4524f;
 }
