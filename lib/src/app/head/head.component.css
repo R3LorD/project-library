@@ -1,4 +1,4 @@
-#top-menu{
+.top-menu{
     height: 50px;
     width: 100%;
     margin-left: auto;
@@ -8,7 +8,7 @@
     font-size: 16pt;
 }
 
-#Main{
+.main{
     grid-column: 1;
     display: grid;
     align-items: center;
@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 
-#Favourite{
+.favourite{
     grid-column: 2;
     display: grid;
     align-items: center;
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-#genre{
+.genre{
     grid-column: 3;
     display: grid;
     align-items: center;
@@ -38,7 +38,8 @@
 }
 
 
-#Main:hover{
+
+.main:hover{
     color: white;
     
 }
@@ -46,13 +47,13 @@
 
 /*Нижнее меню*/
 
-#low-menu{
+.low-menu{
     height: 100px;
     width: 100%;
     background: #34393e;
 }
 
-#low-inner-menu{
+.low-inner-menu{
     height: 100%;
     width: 1200px;
     margin-left: auto;
@@ -61,7 +62,7 @@
     grid-template-columns: 2fr 2fr 1fr;
 }
 
-#logo{
+.logo{
     grid-column: 1;
     text-align: center;
     margin-top: auto;
@@ -70,7 +71,7 @@
     cursor: pointer;
 }
 
-#search{
+.search{
     grid-column: 2;
     margin: auto;
     height: 20px;

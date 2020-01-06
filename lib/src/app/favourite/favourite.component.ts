@@ -15,6 +15,7 @@ export class FavouriteComponent implements OnInit {
 
   ngOnInit() {
     this.books = this.favService.favBooks;
+    console.log(this.books);
   }
 
   read(bookSrc: string){
