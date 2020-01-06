@@ -27,7 +27,7 @@ export class MainComponent implements OnInit {
         description: `Ведьмак» Анджея Сапковского является 
         одним из самых популярных циклов книг. 
         Это история о приключениях ведьмака Геральта, охотника на чудовищ.`,
-        favBtn: true
+        favBtn: this.favService.favBtns[0]
       },
       {
         id: 1,
@@ -41,7 +41,7 @@ export class MainComponent implements OnInit {
         межгалактического шоссе Артур Дент, вместе со своим другом-инопланетянином 
         Фордом Префектом, покидает планету и начинает свою умопомрачительную одиссею, 
         покорившую миллионы читателей по всему миру.`,
-        favBtn: true
+        favBtn: this.favService.favBtns[1]
       },
       {
         id: 2,
@@ -54,7 +54,7 @@ export class MainComponent implements OnInit {
         классика мировой литературы А.С Пушкина,
          как и почти двести лет назад, так и сегодня не теряет 
          своей своей актуальности и любим читателями по всему миру.`,
-         favBtn: true
+         favBtn: this.favService.favBtns[2]
       },
       {
         id: 3,
@@ -66,18 +66,25 @@ export class MainComponent implements OnInit {
         description: `Мастер и Маргарита» – блистательный шедевр, 
         созданный Михаилом Булгаковым, завораживающая мистическая 
         дьяволиада, обнажающая вечные темы любви, борьбы добра со злом, смерти и бессмертия.`,
-        favBtn: true
+        favBtn: this.favService.favBtns[3]
       }  
     ];
   }
   fav(id: number) {
     console.log(id);
 
-    if(this.favService.favBooks.find(el=>el.id == id) == null){
-      this.favService.favBooks.push(this.books.find(el=>el.id == id));
+    if(this.books[id].favBtn){
+      if(this.favService.favBooks.find(el=>el.id == id) == null){
+        this.favService.favBooks.push(this.books.find(el=>el.id == id));
+      }
+      this.favService.favBtns[id] = false;
+      console.log(this.favService.favBooks);
     }
-    console.log(this.favService.favBooks);
+    else{
+      this.favService.favBtns[id] = true;
+    }
 
+    this.books[id].favBtn = this.favService.favBtns[id];
 
   }
 
