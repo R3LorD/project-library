@@ -70,28 +70,30 @@ export class MainComponent implements OnInit {
       }  
     ];
   }
+
+  //Добавляет и убирает из избранного, а также меняет кнопку
   fav(id: number) {
-    console.log(id);
 
     if(this.books[id].favBtn){
       if(this.favService.favBooks.find(el=>el.id == id) == null){
         this.favService.favBooks.push(this.books.find(el=>el.id == id));
       }
       this.favService.favBtns[id] = false;
-      console.log(this.favService.favBooks);
     }
     else{
-      if(this.favService.favBooks.find(el=>el.id == id) != null){
-        this.favService.favBooks.splice(id, 1);
+      const delBook = this.favService.favBooks.find(el => el.id === id);
+      if (delBook != null) {
+        this.favService.favBooks.splice(this.favService.favBooks.indexOf(delBook), 1);
       }
       this.favService.favBtns[id] = true;
-      console.log(this.favService.favBooks);
     }
 
     this.books[id].favBtn = this.favService.favBtns[id];
 
   }
 
+
+  //Открывает книгу
   read(bookSrc: string){
     window.open(bookSrc, '_blank');
     

@@ -15,9 +15,25 @@ export class FavouriteComponent implements OnInit {
 
   ngOnInit() {
     this.books = this.favService.favBooks;
-    console.log(this.books);
   }
 
+
+  //Удаление из избранного
+  fav(id: number) {
+  
+    const delBook = this.favService.favBooks.find(el => el.id === id);
+    if (delBook != null) {
+      this.favService.favBooks.splice(this.favService.favBooks.indexOf(delBook), 1);
+    }
+    this.favService.favBtns[id] = true;
+    
+    this.books[id].favBtn = this.favService.favBtns[id];
+    
+    console.log(this.favService.favBtns);
+    console.log(this.favService.favBooks);
+  }
+
+  //Открывает книгу
   read(bookSrc: string){
     window.open(bookSrc, '_blank');
     
