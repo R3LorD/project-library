@@ -69,6 +69,10 @@ export class MainComponent implements OnInit {
         favBtn: this.favService.favBtns[3]
       }  
     ];
+
+    this.books.forEach(element => {
+      this.favService.searchList.push(element.name);
+    });
   }
 
   //Добавляет и убирает из избранного, а также меняет кнопку

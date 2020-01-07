@@ -12,7 +12,7 @@
                 <mat-form-field class="search">
                     <input class="search-input" matInput placeholder="Поиск" [formControl]="bookInput" [matAutocomplete]="auto">
                     <mat-autocomplete #auto="matAutocomplete">
-                        <mat-option *ngFor="let option of options" [value]="option">
+                        <mat-option *ngFor="let option of filteredBookSearch | async" [value]="option">
                           {{ option }}
                         </mat-option>
                     </mat-autocomplete>
