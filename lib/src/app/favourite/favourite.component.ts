@@ -27,10 +27,8 @@ export class FavouriteComponent implements OnInit {
     }
     this.favService.favBtns[id] = true;
     
-    this.books[id].favBtn = this.favService.favBtns[id];
-    
-    console.log(this.favService.favBtns);
-    console.log(this.favService.favBooks);
+    console.log(this.favService.favBooks, id);
+
   }
 
   //Открывает книгу
