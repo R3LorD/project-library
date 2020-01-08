@@ -14,6 +14,11 @@ export class FavouriteComponent implements OnInit {
   books = new Array<book>();
 
   ngOnInit() {
+    this.favService.favBooks = JSON.parse(localStorage.getItem('favBooks'));
+    this.favService.favBooks.forEach(element => {
+      this.favService.favBtns[element.id] = false;
+    });
+
     this.books = this.favService.favBooks;
   }
 
@@ -26,6 +31,7 @@ export class FavouriteComponent implements OnInit {
       this.favService.favBooks.splice(this.favService.favBooks.indexOf(delBook), 1);
     }
     this.favService.favBtns[id] = true;
+    localStorage.setItem('favBooks', JSON.stringify(this.favService.favBooks));
     
     console.log(this.favService.favBooks, id);
 

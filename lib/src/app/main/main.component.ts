@@ -16,6 +16,12 @@ export class MainComponent implements OnInit {
   favBtns = new Array<favBtns>();
 
   ngOnInit() {
+
+    this.favService.favBooks = JSON.parse(localStorage.getItem('favBooks'));
+    this.favService.favBooks.forEach(element => {
+      this.favService.favBtns[element.id] = false;
+    });
+
     this.books = [
       {
         id: 0,
@@ -83,6 +89,9 @@ export class MainComponent implements OnInit {
         this.favService.favBooks.push(this.books.find(el=>el.id == id));
       }
       this.favService.favBtns[id] = false;
+
+      //Кидает массив с избранными книгами в локальное хранилище
+      localStorage.setItem('favBooks', JSON.stringify(this.favService.favBooks));
     }
     else{
       const delBook = this.favService.favBooks.find(el => el.id === id);
@@ -90,6 +99,9 @@ export class MainComponent implements OnInit {
         this.favService.favBooks.splice(this.favService.favBooks.indexOf(delBook), 1);
       }
       this.favService.favBtns[id] = true;
+
+      //Удаляет элемент массива из локального хранилища
+      localStorage.setItem('favBooks', JSON.stringify(this.favService.favBooks));
     }
 
     this.books[id].favBtn = this.favService.favBtns[id];
