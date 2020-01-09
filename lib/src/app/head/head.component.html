@@ -1,7 +1,8 @@
 <div class="header">
     <div class="top-menu">
-        <div routerLink='' class="top-menu-text main">Главная</div>
-        <div routerLink='favourite' class="top-menu-text favourite">Избранное</div>
+        <div routerLink='' routerLinkActive="active" class="top-menu-text main" 
+        [routerLinkActiveOptions]="{exact:true}">Главная</div>
+        <div routerLink='favourite' routerLinkActive="active" class="top-menu-text favourite">Избранное</div>
         <div class="top-menu-text genre">Жанры</div>
   
     </div>

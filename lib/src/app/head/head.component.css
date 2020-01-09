@@ -1,3 +1,5 @@
+/*Верхнее меню*/
+
 .top-menu{
     height: 50px;
     width: 100%;
@@ -14,6 +16,8 @@
     align-items: center;
     justify-items: center;
     cursor: pointer;
+    margin: 10px 10px 0 10px;
+    border-radius: 5px 5px 0 0;
 }
 
 .favourite{
@@ -22,6 +26,8 @@
     align-items: center;
     justify-items: center;
     cursor: pointer;
+    margin: 10px 10px 0 10px;
+    border-radius: 5px 5px 0 0;
 }
 
 .genre{
@@ -30,18 +36,19 @@
     align-items: center;
     justify-items: center;
     cursor: pointer;
+    margin: 10px 10px 0 10px;
+    border-radius: 5px 5px 0 0;
 }
 
 .top-menu-text:hover{
-    background: #34393e;
+    background: #4a4e53;
     color: white;
 }
 
-.main:hover{
+.active{
+    background: #4a4e53;
     color: white;
-    
 }
-/*/Верхнее меню*/
 
 /*Нижнее меню*/
 
@@ -71,15 +78,31 @@
 
 .search{
     grid-column: 2;
-    margin: auto;
     height: 20px;
     width: 100%;
     border-radius: 10px;
     padding-left: 10px;
-    
-    
+    padding-top: 13px;
 }
 
 .search-input{
     color: white;
+}
+
+/*Адаптация*/
+
+@media screen and (max-width: 1200px){
+    .logo{
+        display: none;
+    }
+
+    .low-inner-menu{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .search{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
 }
