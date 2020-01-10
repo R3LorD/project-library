@@ -26,8 +26,6 @@ export class FavouriteComponent implements OnInit {
       this.favService.favBooks.splice(this.favService.favBooks.indexOf(delBook), 1);
     }
     this.favService.favBtns[id] = true;
-    
-    console.log(this.favService.favBooks, id);
 
   }
 

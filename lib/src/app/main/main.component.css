@@ -65,7 +65,7 @@
 
 /*Адаптация*/
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1199px){
     .content{
         width: 600px;
         grid-template-rows: 1fr 1fr 1fr 1fr;

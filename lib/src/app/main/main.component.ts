@@ -73,6 +73,9 @@ export class MainComponent implements OnInit {
     this.books.forEach(element => {
       this.favService.searchList.push(element.name);
     });
+
+    //Книги для отображения при поиске
+    this.favService.books = this.books;
   }
 
   //Добавляет и убирает из избранного, а также меняет кнопку
