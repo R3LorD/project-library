@@ -1,4 +1,9 @@
 /*Верхнее меню*/
+.header{
+    background: #34393e;
+    color: white;
+    
+}
 
 .top-menu{
     height: 50px;
@@ -18,6 +23,7 @@
     cursor: pointer;
     margin: 10px 10px 0 10px;
     border-radius: 5px 5px 0 0;
+    background: #4a4e53;
 }
 
 .favourite{
@@ -28,6 +34,7 @@
     cursor: pointer;
     margin: 10px 10px 0 10px;
     border-radius: 5px 5px 0 0;
+    background: #4a4e53;
 }
 
 .genre{
@@ -38,75 +45,63 @@
     cursor: pointer;
     margin: 10px 10px 0 10px;
     border-radius: 5px 5px 0 0;
+    background: #4a4e53;
 }
 
 .top-menu-text:hover{
-    background: #4a4e53;
-    color: white;
+    background: white;
+    color: black;
 }
 
 .active{
-    background: #4a4e53;
-    color: white;
+    background: white;
+    color: black;
 }
 
-/*Нижнее меню*/
-
-.low-menu{
-    height: 100px;
-    width: 100%;
-    background: #34393e;
+.contain{
+    position: absolute;
+    width: 380px;
+    height: 200px;
+    background: white;
+    z-index: 9;
+    color: black;
+    top: 50px;
+    display: none;
 }
 
-.low-inner-menu{
-    height: 100%;
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+.genre:hover .contain{
+    display: block;
+}
+
+.font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.checkboxes{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-}
-
-.logo{
-    grid-column: 1;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    color: white;
-    cursor: pointer;
+    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto, 1fr);
+    padding: 0 10px 0 10px;
 }
 
 .search{
-    grid-column: 2;
-    height: 20px;
     width: 100%;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-top: 13px;
+    cursor: default;
+    padding: 0 10px 0 10px;
 }
 
-.search-input{
-    color: white;
-}
 
 /*Адаптация*/
 
 @media screen and (max-width: 1199px){
-    .logo{
-        display: none;
-    }
 
-    .low-inner-menu{
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
-
-    .search{
-        margin-top: auto;
-        margin-bottom: auto;
+    .contain{
+        right: 15%;
     }
 
     .top-menu{
         width: 100%;
     }
 }
+

@@ -4,6 +4,6 @@
 
 $primary: mat-palette($mat-blue-grey, A100);
 $accent:  mat-palette($mat-blue-grey, A100);
-$theme: mat-dark-theme($primary, $accent);
+$theme: mat-light-theme($primary, $accent);
 
 @include angular-material-theme($theme)
