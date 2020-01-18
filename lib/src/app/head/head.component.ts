@@ -38,6 +38,7 @@ export class HeadComponent implements OnInit {
   
   bookInput = new FormControl();
   filteredBookSearch: Observable<string[]>;
+  checked = true;
 
 
   private _filter(value: string) : string[]{
@@ -55,4 +56,5 @@ export class HeadComponent implements OnInit {
   GotSearch(ev){
     this.favService.searchedBook = this.favService.books.find(el => el.name === ev.option.value);
   }
+
 }
