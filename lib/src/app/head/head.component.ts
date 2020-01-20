@@ -38,7 +38,24 @@ export class HeadComponent implements OnInit {
   
   bookInput = new FormControl();
   filteredBookSearch: Observable<string[]>;
-  checked = true;
+
+  //Чекбоксы
+  // checked = true;
+  changeGenreList(){
+    for(var i = 0; i < this.favService.genreList.length; i++){
+      if(this.favService.allGenresCheckbox){
+        if(this.favService.genreList[i]){
+          this.favService.genreList[i] = false;
+        }
+      }
+      else{
+        if(!this.favService.genreList[i]){
+          this.favService.genreList[i] = true;
+        }
+      }
+    }
+    console.log(this.favService.genreList);
+  }
 
 
   private _filter(value: string) : string[]{

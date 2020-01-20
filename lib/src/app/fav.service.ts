@@ -10,4 +10,8 @@ export class FavService{
 
     //Кнопки
     favBtns: boolean[] = [true, true, true, true];
+
+    //Чекбоксы
+    allGenresCheckbox: boolean = true;
+    genreList: boolean[] = [true, true, true];
 }
