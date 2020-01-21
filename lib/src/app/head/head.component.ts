@@ -35,7 +35,7 @@ export class HeadComponent implements OnInit {
       })
     );
   }
-  
+
   bookInput = new FormControl();
   filteredBookSearch: Observable<string[]>;
 

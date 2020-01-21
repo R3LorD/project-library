@@ -58,10 +58,12 @@
     color: black;
 }
 
+/*Поиск и т.д.*/
+
 .contain{
     position: absolute;
     width: 380px;
-    height: 200px;
+    height: 250px;
     background: white;
     z-index: 9;
     color: black;
@@ -89,6 +91,11 @@
     width: 100%;
     cursor: default;
     padding: 0 10px 0 10px;
+}
+
+.btn-primary{
+    background: #87adb6;
+    border-color: #87adb6;
 }
 
 

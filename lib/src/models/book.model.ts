@@ -13,3 +13,8 @@ export class favBtns{
     id: number;
     favBtn: boolean;
 }
+
+export class genreList{
+    genre: string;
+    activate: boolean;
+}
