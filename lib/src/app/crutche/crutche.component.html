@@ -1,0 +1,39 @@
+<div class="content">
+
+    <ng-container *ngIf='this.favService.searchedBook == null; else ShowSearchedBook'>
+        <div *ngFor="let book of books" class="book border shadow rounded">
+            <div class="cover">
+                <img class="cover-b" src="{{book.imgSrc}}">
+            </div>
+            <div class="des">
+                <div class="name"><b>{{book.name}}</b></div>
+                <div class="author"><b>{{book.author}}</b></div>
+                <div class='genre'><b>{{book.genre}}</b></div>
+                <div class="description">{{book.description}}</div>
+                <div class="btns">
+                    <button (click)='read(book.bookSrc)' class='btn btn-primary btn-b read'>Читать</button>
+                    <button *ngIf='book.favBtn' (click)='fav(book.id)' class="btn btn-primary btn-b in-f">В Избранное</button>
+                    <button *ngIf='!book.favBtn' (click)='fav(book.id)' class="btn btn-secondary btn-b in-f">В Избранном</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #ShowSearchedBook>
+        <div class="book border shadow rounded">
+            <div class="cover">
+                <img class="cover-b" src="{{this.favService.searchedBook.imgSrc}}">
+            </div>
+            <div class="des">
+                <div class="name"><b>{{this.favService.searchedBook.name}}</b></div>
+                <div class="author"><b>{{this.favService.searchedBook.author}}</b></div>
+                <div class='genre'><b>{{this.favService.searchedBook.genre}}</b></div>
+                <div class="description">{{this.favService.searchedBook.description}}</div>
+                <div class="btns">
+                    <button (click)='read(this.favService.searchedBook.bookSrc)' class='btn btn-primary btn-b read'>Читать</button>
+                    <button *ngIf='this.favService.searchedBook.favBtn' (click)='fav(this.favService.searchedBook.id)' class="btn btn-primary btn-b in-f">В Избранное</button>
+                    <button *ngIf='!this.favService.searchedBook.favBtn' (click)='fav(this.favService.searchedBook.id)' class="btn btn-secondary btn-b in-f">В Избранном</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

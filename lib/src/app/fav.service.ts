@@ -1,4 +1,4 @@
-import { book } from 'src/models/book.model';
+import { book, genreList } from 'src/models/book.model';
 
 export class FavService{
     favBooks = new Array<book>();
@@ -13,5 +13,6 @@ export class FavService{
 
     //Чекбоксы
     allGenresCheckbox: boolean = true;
-    genreList: boolean[] = [true, true, true];
+    genres = new Array<genreList>();
+
 }

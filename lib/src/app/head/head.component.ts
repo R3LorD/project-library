@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { FavService } from '../fav.service';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { book } from 'src/models/book.model';
+import { book, genreList } from 'src/models/book.model';
 
 @Component({
   selector: 'app-head',
@@ -20,7 +20,25 @@ export class HeadComponent implements OnInit {
       map(value => this._filter(value))
     );
 
-    console.log(this.options);
+    this.genres = [
+      {
+        genre: 'Драма',
+        activate: true
+      },
+      {
+        genre: 'Фантастика',
+        activate: true
+      },
+      {
+        genre: "Классическая проза", 
+        activate: true
+      }
+    ];  
+
+    this.genres.forEach(el => {
+      this.favService.genres.push(el);
+    });
+
   }
 
   ngAfterViewInit() {
@@ -36,25 +54,36 @@ export class HeadComponent implements OnInit {
     );
   }
 
+  activateGenres(){
+    for(let i = 0; i < this.genres.length; i++){
+      if(this.favService.genres[i].activate != this.genres[i].activate){
+        this.favService.genres[i].activate = this.genres[i].activate;
+      }
+    }
+  }
+
+  genres = new Array<genreList>();
   bookInput = new FormControl();
   filteredBookSearch: Observable<string[]>;
 
-  //Чекбоксы
-  // checked = true;
+
+  //Перебиндивает чекбоксы нажатием на чекбокс "все жанры"
   changeGenreList(){
-    for(var i = 0; i < this.favService.genreList.length; i++){
-      if(this.favService.allGenresCheckbox){
-        if(this.favService.genreList[i]){
-          this.favService.genreList[i] = false;
+    if(this.favService.allGenresCheckbox){
+      this.genres.forEach(el => {
+        if(el.activate){
+          el.activate = false;
         }
-      }
-      else{
-        if(!this.favService.genreList[i]){
-          this.favService.genreList[i] = true;
-        }
-      }
+      });
     }
-    console.log(this.favService.genreList);
+    else{
+      this.genres.forEach(el => {
+        if(!el.activate){
+          el.activate = true;
+        }
+      });
+    }
+    
   }
 
 
