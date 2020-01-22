@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit{
 
   constructor(private favService: FavService,
     private dataService: DataService) {
@@ -19,18 +19,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
 
-    this.books = this.dataService.books;
-
-    // //Ультра закидывание данных с учетом жанров
-    // this.dataService.books.forEach(el => {
-    //   this.favService.genres.forEach(el2 => {
-    //     if(el.genre === el2.genre){
-    //       if(el2.activate){
-    //         this.books.push(el);
-    //       }
-    //     }
-    //   })
-    // });
+    this.books = this.favService.SortedBooks;
 
     this.books.forEach(element => {
       this.favService.searchList.push(element.name);
@@ -40,22 +29,6 @@ export class MainComponent implements OnInit {
     this.favService.books = this.books;
 
   }
-
-  // ngAfterViewInit() {
-  //   //Ультра закидывание данных с учетом жанров
-  //   this.books = [];
-  //   this.dataService.books.forEach(el => {
-  //     this.favService.genres.forEach(el2 => {
-  //       if(el.genre === el2.genre){
-  //         if(el2.activate){
-  //           this.books.push(el);
-  //         }
-  //       }
-  //     })
-  //   });
-  // }
-
-  
 
   //Добавляет и убирает из избранного, а также меняет кнопку
   fav(id: number) {
@@ -83,5 +56,9 @@ export class MainComponent implements OnInit {
   read(bookSrc: string){
     window.open(bookSrc, '_blank');
     
+  }
+
+  reload(){
+    this.ngOnInit();
   }
 }

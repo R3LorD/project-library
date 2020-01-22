@@ -4,6 +4,7 @@ import { FavService } from '../fav.service';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { book, genreList } from 'src/models/book.model';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-head',
@@ -12,9 +13,11 @@ import { book, genreList } from 'src/models/book.model';
 })
 export class HeadComponent implements OnInit {
 
-  constructor(private favService: FavService) { }
+  constructor(private favService: FavService,
+    private dataService: DataService) { }
 
   ngOnInit() {
+
     this.filteredBookSearch = this.bookInput.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -26,7 +29,7 @@ export class HeadComponent implements OnInit {
         activate: true
       },
       {
-        genre: 'Фантастика',
+        genre: 'Повесть',
         activate: true
       },
       {
@@ -34,11 +37,6 @@ export class HeadComponent implements OnInit {
         activate: true
       }
     ];  
-
-    this.genres.forEach(el => {
-      this.favService.genres.push(el);
-    });
-
   }
 
   ngAfterViewInit() {
@@ -55,11 +53,17 @@ export class HeadComponent implements OnInit {
   }
 
   activateGenres(){
-    for(let i = 0; i < this.genres.length; i++){
-      if(this.favService.genres[i].activate != this.genres[i].activate){
-        this.favService.genres[i].activate = this.genres[i].activate;
-      }
-    }
+    //И вновь ультразакидывание
+    this.favService.SortedBooks = [];
+    this.dataService.books.forEach(el => {
+      this.genres.forEach(el2 => {
+        if(el.genre == el2.genre){
+          if(el2.activate){
+            this.favService.SortedBooks.push(el);
+          }
+        }
+      });
+    });
   }
 
   genres = new Array<genreList>();
@@ -84,6 +88,12 @@ export class HeadComponent implements OnInit {
       });
     }
     
+  }
+
+  allChange(activate: boolean){
+    if(activate){
+      this.favService.allGenresCheckbox = false;
+    }
   }
 
 

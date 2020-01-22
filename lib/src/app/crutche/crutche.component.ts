@@ -19,23 +19,23 @@ export class CrutcheComponent implements OnInit {
 
   ngOnInit() {
 
-    //Ультра закидывание данных с учетом жанров
-    this.dataService.books.forEach(el => {
-      this.favService.genres.forEach(el2 => {
-        if(el.genre === el2.genre){
-          if(el2.activate){
-            this.books.push(el);
-          }
-        }
-      })
-    });
+    // //Ультра закидывание данных с учетом жанров
+    // this.dataService.books.forEach(el => {
+    //   this.favService.genres.forEach(el2 => {
+    //     if(el.genre === el2.genre){
+    //       if(el2.activate){
+    //         this.books.push(el);
+    //       }
+    //     }
+    //   })
+    // });
 
-    this.books.forEach(element => {
-      this.favService.searchList.push(element.name);
-    });
+    // this.books.forEach(element => {
+    //   this.favService.searchList.push(element.name);
+    // });
 
-    //Книги для отображения при поиске
-    this.favService.books = this.books;
+    // //Книги для отображения при поиске
+    // this.favService.books = this.books;
 
   }
 

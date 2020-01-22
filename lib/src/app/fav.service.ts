@@ -13,6 +13,7 @@ export class FavService{
 
     //Чекбоксы
     allGenresCheckbox: boolean = true;
-    genres = new Array<genreList>();
+    
+    SortedBooks = new Array<book>();
 
 }

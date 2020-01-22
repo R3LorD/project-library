@@ -19,10 +19,10 @@
                 <div class='checkboxes'>
                     <mat-checkbox class="font" [(ngModel)]='this.favService.allGenresCheckbox' (click)='changeGenreList()' >Все жанры</mat-checkbox>
 
-                    <mat-checkbox class="font" (click)='allChange()' [(ngModel)]='this.genres[0].activate'>{{this.genres[0].genre}}</mat-checkbox>
-                    <mat-checkbox class="font" [(ngModel)]='this.genres[1].activate'>{{this.genres[1].genre}}</mat-checkbox>
-                    <mat-checkbox class="font" [(ngModel)]='this.genres[2].activate'>{{this.genres[2].genre}}</mat-checkbox>
-                    <button routerLink='main' class="btn btn-primary btn-b in-f" (click)='activateGenres()'>Применить сортировку по жанрам</button>
+                    <mat-checkbox class="font" (click)='allChange(this.genres[0].activate)' [(ngModel)]='this.genres[0].activate'>{{this.genres[0].genre}}</mat-checkbox>
+                    <mat-checkbox class="font" (click)='allChange(this.genres[1].activate)' [(ngModel)]='this.genres[1].activate'>{{this.genres[1].genre}}</mat-checkbox>
+                    <mat-checkbox class="font" (click)='allChange(this.genres[2].activate)' [(ngModel)]='this.genres[2].activate'>{{this.genres[2].genre}}</mat-checkbox>
+                    <button class="btn btn-primary btn-b in-f" (click)='activateGenres()'>Применить сортировку по жанрам</button>
                 </div>    
             </div>
 
