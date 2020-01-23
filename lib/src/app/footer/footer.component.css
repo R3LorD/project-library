@@ -9,7 +9,7 @@
 
 .in-footer{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 1200px;
     height: 100px;
     margin-left: auto;
@@ -34,10 +34,6 @@
 
 .num-support{
     font-size: x-large;
-}
-
-.social{
-    grid-column: 3;
 }
 
 .icon{
