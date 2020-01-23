@@ -60,5 +60,6 @@ export class MainComponent implements OnInit{
 
   reload(){
     this.ngOnInit();
+    console.log('I work');
   }
 }

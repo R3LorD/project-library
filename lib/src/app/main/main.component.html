@@ -1,3 +1,5 @@
+<app-head (rebase)='reload()'></app-head>
+
 <div class="content">
 
     <ng-container *ngIf='this.favService.searchedBook == null; else ShowSearchedBook'>

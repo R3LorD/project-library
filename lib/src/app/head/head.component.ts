@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FavService } from '../fav.service';
 import { map, startWith } from 'rxjs/operators';
@@ -12,6 +12,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./head.component.css']
 })
 export class HeadComponent implements OnInit {
+
+  @Output() rebase = new EventEmitter();
 
   constructor(private favService: FavService,
     private dataService: DataService) { }
@@ -36,7 +38,13 @@ export class HeadComponent implements OnInit {
         genre: "Классическая проза", 
         activate: true
       }
-    ];  
+    ];
+    
+    this.favService.SortedBooks = [];
+    this.dataService.books.forEach(el => {
+      this.favService.SortedBooks.push(el);
+    });
+    this.rebase.emit();
   }
 
   ngAfterViewInit() {
@@ -64,6 +72,8 @@ export class HeadComponent implements OnInit {
         }
       });
     });
+
+    this.rebase.emit();
   }
 
   genres = new Array<genreList>();
