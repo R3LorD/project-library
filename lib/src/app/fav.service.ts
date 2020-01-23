@@ -9,7 +9,7 @@ export class FavService{
     searchedBook: book = null;
 
     //Кнопки
-    favBtns: boolean[] = [true, true, true, true];
+    favBtns: boolean[] = [true, true, true, true, true, true];
 
     //Чекбоксы
     allGenresCheckbox: boolean = true;

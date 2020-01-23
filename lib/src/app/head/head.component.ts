@@ -37,6 +37,10 @@ export class HeadComponent implements OnInit {
       {
         genre: "Классическая проза", 
         activate: true
+      },
+      {
+        genre: 'Поэма',
+        activate: true
       }
     ];
     
