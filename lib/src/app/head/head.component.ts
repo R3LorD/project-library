@@ -12,14 +12,21 @@ import { DataService } from '../data.service';
   styleUrls: ['./head.component.css']
 })
 export class HeadComponent implements OnInit {
-
+  
   @Output() rebase = new EventEmitter();
-
+  
   constructor(private favService: FavService,
     private dataService: DataService) { }
+    
+    genres = new Array<genreList>();
+    bookInput = new FormControl();
+    filteredBookSearch: Observable<string[]>;
+    options: string[];
 
   ngOnInit() {
 
+    this.options = [];
+    this.options = this.favService.searchList;
     this.filteredBookSearch = this.bookInput.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -52,7 +59,9 @@ export class HeadComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    
+
+    this.options = [];    
+    this.options = this.favService.searchList;
     this.filteredBookSearch = this.bookInput.valueChanges.pipe(
       startWith(''),
       map(value => {
@@ -80,9 +89,6 @@ export class HeadComponent implements OnInit {
     this.rebase.emit();
   }
 
-  genres = new Array<genreList>();
-  bookInput = new FormControl();
-  filteredBookSearch: Observable<string[]>;
 
 
   //Перебиндивает чекбоксы нажатием на чекбокс "все жанры"
@@ -119,7 +125,7 @@ export class HeadComponent implements OnInit {
   }
 
   //Опции выбора при поиске
-  options = this.favService.searchList;
+  
 
 
   //Находит выбранную книгу в поиске и помещает ее в переменную "searchedBook"

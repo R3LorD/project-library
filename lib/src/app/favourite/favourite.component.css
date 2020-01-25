@@ -84,4 +84,10 @@
     .empty{
         width: 100%;
     }
+
+    .content{
+        width: 600px;
+        grid-template-rows: repeat(auto, 1fr);
+        grid-template-columns: 1fr;
+    }
 }

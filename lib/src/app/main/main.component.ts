@@ -16,13 +16,22 @@ export class MainComponent implements OnInit{
   }
   books = new Array<book>();
   favBtns = new Array<favBtns>();
+  check: boolean = true;
 
   ngOnInit() {
 
     this.books = this.favService.SortedBooks;
 
     this.books.forEach(element => {
-      this.favService.searchList.push(element.name);
+      for (let i = 0; i < this.favService.searchList.length; i++){
+        if(element.name == this.favService.searchList[i]){
+          this.check = false;
+        }
+      }
+      if(this.check){
+        this.favService.searchList.push(element.name);
+      }
+      this.check = true;
     });
 
     //Книги для отображения при поиске
@@ -60,6 +69,5 @@ export class MainComponent implements OnInit{
 
   reload(){
     this.ngOnInit();
-    console.log('I work');
   }
 }
