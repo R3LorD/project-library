@@ -34,7 +34,11 @@ export class HeadComponent implements OnInit {
 
     this.genres = [
       {
-        genre: 'Драма',
+        genre: 'Роман',
+        activate: true
+      },
+      {
+        genre: 'Роман в стихах',
         activate: true
       },
       {
@@ -47,6 +51,10 @@ export class HeadComponent implements OnInit {
       },
       {
         genre: 'Поэма',
+        activate: true
+      },
+      {
+        genre: "Драматургия", 
         activate: true
       }
     ];
