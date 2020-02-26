@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { book } from 'src/models/book.model';
 import { FavService } from './fav.service';
 
 @Injectable({

@@ -15,7 +15,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DataService } from './data.service';
-import { CrutcheComponent } from './crutche/crutche.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { CrutcheComponent } from './crutche/crutche.component';
     FavouriteComponent,
     HeadComponent,
     FooterComponent,
-    CrutcheComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +33,7 @@ import { CrutcheComponent } from './crutche/crutche.component';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   providers: [FavService, DataService],
   bootstrap: [AppComponent]

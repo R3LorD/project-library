@@ -2,7 +2,8 @@
     <div class="top-menu">
         <div routerLink='' routerLinkActive="active" class="top-menu-text main" 
         [routerLinkActiveOptions]="{exact:true}">Главная</div>
-        <div routerLink='favourite' routerLinkActive="active" class="top-menu-text favourite">Избранное</div>
+        <div routerLink='favourite' routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" 
+        class="top-menu-text favourite">Избранное</div>
         <div class="top-menu-text genre">
             Поиск
             <div class="contain border shadow rounded">
